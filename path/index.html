@@ -20,5 +20,16 @@
     const params = new URLSearchParams(queryString);
     document.getElementById("param").append(params.get("param"));
   </script>
+  <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+  <script>
+    async function main() {
+      await liff.init({ liffId: "1655669621-oYVQEDKQ" })
+      if(liff.isLoggedIn()) {
+        getUserProfile()
+      } else {
+        liff.login({ redirectUrl: "https://supakit25433.github.io/liff-demo/path"})
+      }
+    }
+  </script>
 </body>
 </html>
